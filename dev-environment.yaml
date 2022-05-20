@@ -1,0 +1,6 @@
+name: otw-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - fastapi=0.78.0
