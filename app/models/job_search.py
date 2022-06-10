@@ -13,13 +13,14 @@ class Salary(BaseModel):
 
     @root_validator
     def validate_salary(cls, values):
+        # TODO: If a single arg int is provided instead of kwargs, treat it as `absolute`
         if all(v is None for v in values.values()):
             raise ValueError("At least one salary value must be provided")
         return values
 
 
 class Position(BaseModel):
-    company: str  # or from another service/table
+    company: str  # TODO: Track companies as a model of their own
     title: str
     location: str  # or strong type
     level: str  # or enum
@@ -28,6 +29,7 @@ class Position(BaseModel):
 
 
 class EventKind(str, Enum):
+    # TODO: Figure out what I intend for these sort of hierarchical Enums
     INTERVIEW = "INTERVIEW"  # [technical, phone screen, executive, culture]
     ASSESSMENT = "ASSESSMENT"
     EMAIL = "EMAIL"
@@ -57,6 +59,8 @@ class ApplicationProcess(BaseModel):
 class JobSearchCreate(BaseModel):
     desired_title: str
     desired_salary: Salary | None
+    # TODO: What else to include when starting a new search? e.g. location...
+    # Actually may end up similar to Position model
 
 
 class JobSearch(JobSearchCreate, DBModel):
