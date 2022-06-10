@@ -9,4 +9,5 @@ router = APIRouter()
 def get_info():
     return {"message": "Hello"}
 
+
 router.include_router(job_search.router)

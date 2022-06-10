@@ -5,7 +5,8 @@ all of their job applications, from interest to acceptance.
 
 ## Environment Setup
 
-The application requires a compatible conda environment.
+The application requires a compatible virtual environment.
+Conda is the preferred environment manager (see dev-environment.yaml).
 
 ```sh
 conda env create -f dev-environment.yaml
@@ -14,10 +15,10 @@ conda activate otw-dev
 
 ## Running Locally
 
-After activating your conda env, run the main app to start a development server.
+After activating your conda env, run the main app with uvicorn to start a development server.
 
 ```sh
-python app/main.py
+uvicorn app:otwapp --reload
 ```
 
 ## Running Tests
