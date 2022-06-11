@@ -58,7 +58,7 @@ class ApplicationProcess(BaseModel):
 
 class JobSearchCreate(BaseModel):
     desired_title: str
-    desired_salary: Salary | None
+    desired_salary: int | None  # TODO: Allow to be Salary Model
     # TODO: What else to include when starting a new search? e.g. location...
     # Actually may end up similar to Position model
 

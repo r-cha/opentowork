@@ -18,7 +18,7 @@ conda activate otw-dev
 After activating your conda env, run the main app with uvicorn to start a development server.
 
 ```sh
-uvicorn app:otwapp --reload
+uvicorn app.main:app --reload
 ```
 
 ## Running Tests
