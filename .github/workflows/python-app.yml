@@ -23,6 +23,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: Setup environment
+      uses: conda-incubator/setup-miniconda@v2.1.1
+      with:
+        activate-environment: otw-dev
+        auto-activate-base: false
+        use-only-tar-bz2: true
     
     - name: Cache Conda env
       uses: actions/cache@v2
@@ -34,13 +41,9 @@ jobs:
         CACHE_NUMBER: 0
       id: cache
 
-    - name: Setup Miniconda
-      uses: conda-incubator/setup-miniconda@v2.1.1
-      with:
-        activate-environment: otw-dev
-        environment-file: dev-environment.yaml
-        auto-activate-base: false
-        use-only-tar-bz2: true
+    - name: Update environment
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: conda env update -n otw-dev -f dev-environment.yaml
 
     - name: Format
       run: |
