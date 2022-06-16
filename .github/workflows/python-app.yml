@@ -17,7 +17,8 @@ jobs:
 
     runs-on: ubuntu-latest
     defaults:
-      shell: bach -l {0}
+      run:
+        shell: bash -l {0}
 
     steps:
     - name: Checkout
