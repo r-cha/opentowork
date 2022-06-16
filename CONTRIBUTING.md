@@ -3,6 +3,8 @@
 Thanks for your interest in contributing to OpenToWork!
 We always welcome contributions, but please open an Issue to prompt discussion first.
 
+Give [this guide](https://opensource.guide/how-to-contribute/) a read for your own reference!
+
 The maintainers of OpenToWork reserve the right to close any issue or PR (contribution) they deem unnecessary, out of scope, or off-mission.
 
 ## Policies
