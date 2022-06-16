@@ -28,9 +28,9 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ env.CONDA }}/envs
-        key: conda--${{ runner.arch }}--${{ steps.get-date.outputs.today }}-${{ hashFiles('etc/example-environment-caching.yml') }}-${{ env.CACHE_NUMBER }}
+        key: conda-${{ hashFiles('dev-environment.yaml') }}-${{ env.CACHE_NUMBER }}
       env:
-        # Increase this value to reset cache if etc/example-environment.yml has not changed
+        # Increase this value to reset cache if dev-environment.yaml has not changed
         CACHE_NUMBER: 0
       id: cache
 
@@ -41,9 +41,6 @@ jobs:
         environment-file: dev-environment.yaml
         auto-activate-base: false
         use-only-tar-bz2: true
-
-    - run: |
-        conda list
 
     - name: Format
       run: |
