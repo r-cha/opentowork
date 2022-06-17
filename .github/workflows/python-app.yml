@@ -38,7 +38,7 @@ jobs:
         key: conda-${{ hashFiles('etc/dev-environment.yaml') }}-${{ env.CACHE_NUMBER }}
       env:
         # Increase this value to reset cache if dev-environment.yaml has not changed
-        CACHE_NUMBER: 1
+        CACHE_NUMBER: 2
       id: cache
 
     - name: Update environment
