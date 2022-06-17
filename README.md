@@ -1,4 +1,6 @@
-# opentowork
+# opentowork [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3105/) [![Unit Tests](https://github.com/r-cha/opentowork/actions/workflows/python-app.yml/badge.svg)](https://github.com/r-cha/opentowork/actions/workflows/python-app.yml)
+
+
 
 An experimental python backend for a webapp designed for job seekers to track
 all of their job applications, from interest to acceptance.
@@ -11,7 +13,7 @@ The application requires a compatible virtual environment.
 Conda is the preferred environment manager (see dev-environment.yaml).
 
 ```sh
-conda env create -f dev-environment.yaml
+conda env create -f etc/dev-environment.yaml
 conda activate otw-dev
 ```
 
