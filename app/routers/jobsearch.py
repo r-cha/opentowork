@@ -1,8 +1,7 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, status
 
-from app.db.base import database
 from app.db import searches
-from app.models.job_search import JobSearch, JobSearchCreate
+from app.models.jobsearch import JobSearch, JobSearchCreate
 
 router = APIRouter(prefix="/search", tags=["Job Searches"])
 
@@ -20,3 +19,8 @@ async def list_searches() -> list[JobSearch]:
 @router.get("/{search_id}", response_model=JobSearch)
 async def get_search(search_id: int) -> JobSearch:
     return await searches.get(search_id)
+
+
+@router.delete("/{search_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_search(search_id: int):
+    await searches.delete(search_id)

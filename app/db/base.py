@@ -32,3 +32,8 @@ class TableBase:
         query = self.table.select().where(self.table.c.id == id_)
         all_ = await database.fetch_all(query)
         return all_[0]
+
+    async def delete(self, id_: int):
+        # TODO: Only ever soft-delete?
+        delete = self.table.delete().where(self.table.c.id == id_)
+        return await database.execute(delete)
