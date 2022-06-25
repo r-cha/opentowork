@@ -35,10 +35,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ env.CONDA }}/envs
-        key: conda-${{ hashFiles('etc/dev-environment.yaml') }}-${{ env.CACHE_NUMBER }}
+        key: conda-${{ hashFiles('etc/dev-environment.yaml') }}-${{ github.event.repository.updated_at}}-${{ env.CACHE_NUMBER }}
       env:
         # Increase this value to reset cache if dev-environment.yaml has not changed
-        CACHE_NUMBER: 2
+        CACHE_NUMBER: 0
       id: cache
 
     - name: Update environment
