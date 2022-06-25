@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 import pytest
 
-from app.models.job_search import JobSearchCreate
+from app.models.jobsearch import JobSearchCreate
 from app.testing import generate_random
 
 
@@ -50,3 +50,12 @@ def test_get_search(test_client: TestClient, search_in_db: dict):
     res.raise_for_status()
     data = res.json()
     assert data == search_in_db
+
+
+def test_delete_search(test_client: TestClient, search_in_db: dict):
+    # Delete the single known search
+    test_client.delete(f"{ENDPOINT}/{search_in_db['id']}")
+
+    # Test that it's gone
+    with pytest.raises(Exception):  # TODO: Test specific HTTPError here
+        res = test_client.get(f"{ENDPOINT}/{search_in_db['id']}")
