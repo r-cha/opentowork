@@ -8,7 +8,7 @@ dependencies:
     # Webserver
   - uvicorn=0.17.6
   - fastapi=0.78.0
-  - sqlalchemy=1.4.37
+  - sqlmodel=0.0.8
   - databases=0.5.3
 
     # Testing

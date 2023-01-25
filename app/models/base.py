@@ -1,8 +1,8 @@
 from datetime import datetime
-from pydantic import BaseModel
+from sqlmodel import SQLModel
 
 
-class DBModel(BaseModel):
+class DBModel(SQLModel):
     id: int | None
     created_on: datetime | None
     updated_on: datetime | None
