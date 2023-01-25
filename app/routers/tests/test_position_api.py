@@ -58,4 +58,4 @@ def test_delete_position(test_client: TestClient, position_in_db: dict):
 
     # Test that it's gone
     with pytest.raises(Exception):  # TODO: Test specific HTTPError here
-        res = test_client.get(f"{ENDPOINT}/{position_in_db['id']}")
+        _ = test_client.get(f"{ENDPOINT}/{position_in_db['id']}")

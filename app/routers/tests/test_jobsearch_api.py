@@ -58,4 +58,4 @@ def test_delete_search(test_client: TestClient, search_in_db: dict):
 
     # Test that it's gone
     with pytest.raises(Exception):  # TODO: Test specific HTTPError here
-        res = test_client.get(f"{ENDPOINT}/{search_in_db['id']}")
+        _ = test_client.get(f"{ENDPOINT}/{search_in_db['id']}")
