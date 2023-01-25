@@ -10,7 +10,7 @@ all of their job applications, from interest to acceptance.
 ### Environment Setup
 
 The application requires a compatible virtual environment.
-Conda is the preferred environment manager (see dev-environment.yaml).
+Conda is the preferred environment manager (see [dev-environment.yaml](./etc/dev-environment.yaml)).
 
 ```sh
 conda env create -f etc/dev-environment.yaml
