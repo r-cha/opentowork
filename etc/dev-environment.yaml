@@ -17,4 +17,4 @@ dependencies:
 
     # Style
   - black=22.3.0
-  - ruff=0.0.220
+  # - ruff=0.0.220

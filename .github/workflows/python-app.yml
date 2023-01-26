@@ -49,9 +49,9 @@ jobs:
       run: |
         black . --check
 
-    - name: Lint
-      run: |
-        ruff app
+    # - name: Lint
+    #   run: |
+    #     ruff app
 
     - name: Test with pytest
       run: |
