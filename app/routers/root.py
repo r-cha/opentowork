@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.routers import job_search
+from app.routers import jobsearch, position
 
 router = APIRouter()
 
@@ -10,4 +10,5 @@ def get_info():
     return {"message": "Hello"}
 
 
-router.include_router(job_search.router)
+router.include_router(jobsearch.router)
+router.include_router(position.router)
