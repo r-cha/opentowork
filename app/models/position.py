@@ -16,14 +16,10 @@ class PositionLevel(str, Enum):
     # and more
 
 
-class PositionCreate(BaseModel):
+class Position(DBModel):
     company: str  # TODO: Track companies as a model of their own
     title: str
     location: str  # or strong type?
     level: str
     expected_salary: int
     description: str
-
-
-class Position(PositionCreate, DBModel):
-    pass

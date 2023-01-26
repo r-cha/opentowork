@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
 from app.routers import root
-from app.db.base import metadata, engine
+from app.db import engine, SQLModel
 
 
 app = FastAPI()
 app.include_router(root.router)
-metadata.create_all(engine)
+SQLModel.metadata.create_all(engine)
