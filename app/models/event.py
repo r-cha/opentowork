@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import Enum
 
-from pydantic import Field
+from sqlmodel import Field
 
 from app.models.base import DBModel
 from app.models.position import Position

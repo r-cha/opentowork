@@ -9,6 +9,7 @@ dependencies:
   - uvicorn=0.17.6
   - fastapi=0.78.0
   - sqlmodel=0.0.8
+  - aiosqlite=0.18.0
   - databases=0.5.3
 
     # Testing

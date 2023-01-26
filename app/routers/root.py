@@ -10,5 +10,5 @@ def get_info():
     return {"message": "Hello"}
 
 
-router.include_router(jobsearch.router)
+# router.include_router(jobsearch.router)
 router.include_router(position.router)

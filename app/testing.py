@@ -22,9 +22,12 @@ type_default_map: dict[type, Callable] = {
 def generate_random(model_class: Type[BaseModel]) -> dict:
     fields = model_class.__fields__
 
+    opt_fields = {"id", "created_on", "updated_on"}
+
     random_model = {
         name: type_default_map.get(field.type_, lambda: generate_random(field.type_))()
         for name, field in fields.items()
+        if name not in opt_fields
     }
 
     return random_model

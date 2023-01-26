@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 import pytest
 
-from app.models.position import PositionCreate
+from app.models.position import Position
 from app.testing import generate_random
 
 
@@ -10,14 +10,14 @@ ENDPOINT = "/positions"
 
 @pytest.fixture
 def position_in_db(test_client: TestClient) -> dict:
-    new_position = generate_random(PositionCreate)
+    new_position = generate_random(Position)
     res = test_client.post(f"{ENDPOINT}/", json=new_position)
     return res.json()
 
 
 def test_create_new_position(test_client: TestClient):
     # Generate a position
-    new_position = generate_random(PositionCreate)
+    new_position = generate_random(Position)
 
     # Post it
     res = test_client.post(f"{ENDPOINT}/", json=new_position)
